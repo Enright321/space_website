@@ -66,6 +66,8 @@ body {
   background-color: hsl(var(--clr-dark));
   line-height: 1.5;
   min-height: 100vh;
+  display: grid;
+  grid-template-rows: min-content 1fr;
 }
 
 /* make images easier to work with */
@@ -118,6 +120,35 @@ select {
   padding-inline: 2em;
   margin-inline: auto;
   max-width: 80rem;
+}
+
+.grid-container {
+  border: 5px solid lime;
+  text-align: center;
+  display: grid;
+  padding-inline: 1rem;
+  place-items: center;
+  column-gap: var(--container-gap, 2rem);
+  grid-template: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(2rem, 1fr);
+}
+
+@media (min-width: 58rem) {
+  .grid-container {
+    column-gap: var(--container-gap, 2rem);
+    grid-template: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
+        2rem,
+        1fr
+      );
+  }
+  .grid-container > *:first-child {
+    grid-column: 2;
+    outline: 1px solid red;
+  }
+
+  .grid-container > *:last-child {
+    grid-column: 3;
+    outline: 1px solid yellow;
+  }
 }
 
 /* hides content on page for users that are visually impaired */
