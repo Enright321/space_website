@@ -112,7 +112,6 @@ select {
 /* (lobotomized owl) - selects everything that has adjacent siblings that come before it */
 .flow > * + * {
   margin-top: var(--flow-space, 1rem);
-  outline: 1px solid red;
 }
 
 .container {
@@ -230,4 +229,17 @@ select {
 
 #colors .flex > div {
   width: 100%;
+}
+
+/* --------------------------- */
+/* Components                  */
+/* --------------------------- */
+
+.large-button {
+  padding: 0 2em;
+  display: grid;
+  aspect-ratio: 1;
+  place-items: center;
+  text-decoration: none;
+  border-radius: 50%;
 }
