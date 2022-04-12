@@ -131,6 +131,10 @@ select {
   gap: var(--gap, 1rem);
 }
 
+.d-block {
+  display: block;
+}
+
 /* (lobotomized owl) - selects everything that has adjacent siblings that come before it */
 .flow > * + * {
   margin-top: var(--flow-space, 1rem);
