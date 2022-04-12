@@ -156,8 +156,13 @@ select {
   grid-template: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(2rem, 1fr);
 }
 
+.grid-container * {
+  max-width: 50ch;
+}
+
 @media (min-width: 45em) {
   .grid-container {
+    text-align: left;
     column-gap: var(--container-gap, 2rem);
     grid-template: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
         2rem,
@@ -172,6 +177,11 @@ select {
   .grid-container > *:last-child {
     grid-column: 3;
     outline: 1px solid yellow;
+  }
+
+  .grid-container--home {
+    padding-bottom: max(6rem, 20vh);
+    align-items: end;
   }
 }
 
@@ -299,6 +309,7 @@ select {
   place-items: center;
   text-decoration: none;
   border-radius: 50%;
+  font-size: 2rem;
 }
 .large-button::after {
   content: '';
